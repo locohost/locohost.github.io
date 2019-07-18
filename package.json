@@ -1,0 +1,11 @@
+{
+	"name": "nosqlide",
+	"version": "0.0.1",
+	"description": "NOSQL:IDE Database ID 100% JSON driven",
+	"author": {
+		"name": "Mark Deibert",
+		"email": "locohost@protonmail.com"
+	},
+	"devDependencies": {},
+	"dependencies": {}
+}
