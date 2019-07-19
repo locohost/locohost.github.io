@@ -16,11 +16,10 @@
 	<meta name="twitter:title" content="NOSQL:IDE Database IDE for Developers">
 	<meta name="twitter:description"
 		content="NOSQL:IDE Database IDE for Developers | 100% JSON Driven | Electron powered.">
-	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<!-- <link href="vendor/ionicons/css/ionicons.css" rel="stylesheet"> -->
-	<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-	<link href="css/theme.css" rel="stylesheet">
-	<link href="css/template.css" rel="stylesheet">
+	<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
+	<link href="/css/theme.css" rel="stylesheet">
+	<link href="/css/template.css" rel="stylesheet">
 </head>
 
 <body data-spy="scroll" data-target="#navbar1" data-offset="60">
@@ -99,13 +98,14 @@
 		</div>
 	</footer>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<script src="js/scripts.js"></script>
+	<script src="/vendor/jquery/jquery.min.js"></script>
+	<script src="/vendor/bootstrap/js/popper.min.js"></script>
+	<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/js/scripts.js"></script>
+	<div class="nav-bar-container"></div>
 	<script>
 		$(document).ready(() => {
-			loadTemplate('page/nav/nav-bar.html', 'div.nav-bar-container');
+			loadTemplate('/page/nav/nav-bar.html', 'div.nav-bar-container');
 		});
 	</script>
 </body>
