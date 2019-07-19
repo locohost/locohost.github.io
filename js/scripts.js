@@ -91,11 +91,15 @@ $('main').find('.card, .btn-group, .btn, .navbar, .modal, .form-group, .list-gro
 	});
 });
 
-function loadHelpTemplate(templateName) {
+function loadTemplate(templateName, domSelector) {
 	$.ajax({
 		url: templateName,
-		context: $('div.help-content')
+		context: $(domSelector)
 	}).done(function (data) {
 		$(this).empty().append(data);
 	});
+}
+
+function loadPageTemplate(templateName) {
+	loadTemplate(templateName, 'div.page-content');
 }
