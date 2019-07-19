@@ -25,10 +25,10 @@ section:before {
 	min-height: 100vh;
 }
 
-div.help-links a {
+div.page-links a {
 	color: var(--link);
 }
 
-div.help-links, div.help-content {
+div.page-links, div.page-content {
 	padding-top: 75px;
 }
