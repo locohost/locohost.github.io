@@ -6,10 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>NOSQL:IDE | 100% JSON Driven | Electron powered.</title>
 	<meta name="description" content="NOSQL:IDE Database IDE for Developers | 100% JSON Driven | Electron powered." />
-	<!-- <meta name="generator" content="Themestr.app"> -->
-	<!-- <link rel="icon" href="http://themes.guide/favicon.ico" type="image/x-icon" /> -->
-	<!-- <link rel="shortcut icon" href="http://themes.guide/favicon.ico" type="image/x-icon" /> -->
-	<!-- <meta property="og:image" name="twitter:image" content="http://bootstrap.themes.guide/assets/ss_greyson.png"> -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@d6games">
 	<meta name="twitter:creator" content="@d6games">
@@ -25,32 +21,47 @@
 <body data-spy="scroll" data-target="#navbar1" data-offset="60">
 	<header class="bg-primary">
 		<div class="container h-100">
-			<div class="row h-100">
-				<div class="col-12">
-					<div class="text-center m-0 vh-100 d-flex flex-column justify-content-center text-light">
-						<h1 class="display-3 text-warning">{ NOSQL:"IDE" }</h1>
-						<p class="lead">Firestore | MongoDb | DocumentDb<br> Database IDE for developers. 100% <a
-								target="_blank" class="text-secondary" href="https://json-schema.org/">JSON-Schema</a>
-							driven. <a target="_blank" class="text-secondary" href="https://electronjs.org/">Electron
-								powered.</a></p>
-						<div class="row">
-							<div class="col-lg-4 col-sm-6 mx-auto">
-								<div class="input-group mb-3">
-									<input type="text" class="form-control form-control-lg" placeholder="your@email">
-									<div class="input-group-append">
-										<button class="btn btn-outline-light btn-lg rounded-right"
-											type="button">Sign-up</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+			<div class="page-container row h-100">
 			</div>
 		</div>
 	</header>
 
-	<div class="nav-bar-container"></div>
+	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary" id="navbar1">
+		<div class="container">
+			<a class="navbar-brand text-warning mr-1 mb-1 mt-0" href="/index.html">{ NOSQL:"IDE" }</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="navbar-collapse collapse justify-content-center" id="collapsingNavbar">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="#"
+							onclick="loadTemplate('/template/features.html', 'div.page-container');">Features</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"
+							onclick="loadTemplate('/template/download.html', 'div.page-container');">Download</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"
+							onclick="loadTemplate('/template/pricing.html', 'div.page-container');">Pricing</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"
+							onclick="loadTemplate('/template/help/home.html', 'div.page-container');">Help</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"
+							onclick="loadTemplate('/template/about.html', 'div.page-container');">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"
+							onclick="loadTemplate('/template/contact.html', 'div.page-container');">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
 	<footer id="footer" class="bg-dark text-light py-5">
 		<div class="container py-5">
@@ -102,10 +113,9 @@
 	<script src="/vendor/bootstrap/js/popper.min.js"></script>
 	<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="/js/scripts.js"></script>
-	<div class="nav-bar-container"></div>
 	<script>
 		$(document).ready(() => {
-			loadTemplate('/page/nav/nav-bar.html', 'div.nav-bar-container');
+			loadTemplate('/template/home.html', 'div.page-container');
 		});
 	</script>
 </body>
