@@ -58,8 +58,8 @@
 					</p>
 					<p>
 						<h5>db.<span class="db-name">yourdatabasename</span>.softDeleteAttrib</h5>
-						This sets the name of the collection attribute used to mark your documents as 'soft deleted'.
-						Set	this to null if you do not use soft deleted documents. Soft deleting is way better than hard deletes because you can recover docs when/if necessary. In all my databases, in every collection doc, I have a <strong>del: false</strong> attrib set on create. Then I set that to true when I need to soft delete the doc. NOTE: A new cleanup feature to purge (hard delete) ranges of soft deleted documents is in development.
+						This sets the name of the collection attribute used to mark your documents as <i>soft deleted</i>.
+						Set	this to null if you do not want to use soft deleted documents. NoSQL:IDE queries <i>automatically honor</i> this soft delete attrib. You <i>do need</i> to have/set this attrib to false when creating new docs, however there is no need to enter it in any queries. Soft deleting is better than hard deletes for soooo many reasons. NOTE: A new cleanup feature to purge (hard delete) ranges of soft deleted documents is in development.
 					</p>
 					<p>
 						<h5>db.<span class="db-name">yourdatabasename</span>.config</h5>
