@@ -1,7 +1,10 @@
 <div class="help-app-config">
 	<h5>App Config JSON</h5>
 	<div>
-		<p>NoSQL:IDE is fully driven by JSON doc files. The main JSON doc is <strong>app.config.json</strong>. This JSON doc stores all the necessary information for configuring, loading, running and connecting to your databases. Following is an example of a valid app.config.json that can connect to 2 different Firestore databases. Following the screen cap are details of each field.
+		<p>NoSQL:IDE is fully driven by JSON doc files. The main JSON doc is <strong>app.config.json</strong>. This JSON
+			doc stores all the necessary information for configuring, loading, running and connecting to your databases.
+			Following is an example of a valid app.config.json that can connect to 2 different Firestore databases.
+			Following the screen cap are details of each field.
 		</p>
 		<img src="/assets/img/screen-cap-app-config.png">
 	</div>
@@ -31,7 +34,8 @@
 			<div style="margin-left: 20px; padding-left: 20px;">
 				<p>
 					<h5>db.<span class="db-name">yourdatabasename</span></h5>
-					Enter one of these objects within the db object for each of your different database. Ofc replace <i>yourdatabasename</i> text with the actual name of your database.
+					Enter one of these objects within the db object for each of your different database. Ofc replace
+					<i>yourdatabasename</i> text with the actual name of your database.
 				</p>
 				<div style="margin-left: 20px; padding-left: 20px;">
 					<p>
@@ -42,27 +46,31 @@
 					</p>
 					<p>
 						<h5>db.<span class="db-name">yourdatabasename</span>.dbUserEmail</h5>
-						This sets the user account credentials name/email used to connect to your database.
+						This sets the user account credentials name/email used to connect to your database. This account
+						must have an appropriate role in your database with enough permissions to read/write to your
+						collections. It does not have to be a full admin account.
 					</p>
 					<p>
 						<h5>db.<span class="db-name">yourdatabasename</span>.dbUserPass</h5>
-						This sets the user account credentials password.
+						This sets the user account credentials password. NOTE: <i>Nothing</i> in this app.config.json is
+						transmitted out or copied/stored anywhere outside your local computer. Your account creditials
+						are local and safe.
 					</p>
 					<p>
 						<h5>db.<span class="db-name">yourdatabasename</span>.softDeleteAttrib</h5>
 						This sets the name of the collection attribute used to mark your documents as 'soft deleted'.
-						Set
-						this
-						to null if you do not use soft deleted documents.
+						Set	this to null if you do not use soft deleted documents. Soft deleting is way better than hard deletes because you can recover docs when/if necessary. In all my databases, in every collection doc, I have a <strong>del: false</strong> attrib set on create. Then I set that to true when I need to soft delete the doc. NOTE: A new cleanup feature to purge (hard delete) ranges of soft deleted documents is in development.
 					</p>
 					<p>
 						<h5>db.<span class="db-name">yourdatabasename</span>.config</h5>
 						This is your database configuration details. You must get this specific JSON from your database
-						provider. The screen cap above shows a Google Firestore config. Please consult the documentation for each different database.
+						provider. The screen cap above shows a Google Firestore config. Please consult the documentation
+						for each different database.
 					</p>
 					<p>
 						<h5>db.<span class="db-name">yourdatabasename</span>.collections</h5>
-						These are the names of each collections in your database you wish to access. Leave out any collection you don't want/need to edit.
+						These are the names of each collections in your database you wish to access. Leave out any
+						collection you don't want/need to edit.
 					</p>
 				</div>
 			</div>
