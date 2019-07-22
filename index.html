@@ -19,13 +19,6 @@
 </head>
 
 <body class="bg-primary" data-target="#navbar1" data-offset="60">
-	<header>
-		<div class="container">
-			<div class="page-container row">
-			</div>
-		</div>
-	</header>
-
 	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary" id="navbar1">
 		<div class="container">
 			<a class="navbar-brand text-warning mr-1 mb-1 mt-0" href="/index.html">{ NOSQL:"IDE" }</a>
@@ -35,35 +28,38 @@
 			<div class="navbar-collapse collapse justify-content-center" id="collapsingNavbar">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
-						<a class="nav-link" href="#"
-							onclick="loadIndexPageTemplate('features');">Features</a>
+						<a class="nav-link" href="#" onclick="loadIndexPageTemplate('features');">Features</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#"
-							onclick="loadIndexPageTemplate('download');">Download</a>
+						<a class="nav-link" href="#" onclick="loadIndexPageTemplate('download');">Download</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#"
-							onclick="loadIndexPageTemplate('pricing');">Pricing</a>
+						<a class="nav-link" href="#" onclick="loadIndexPageTemplate('pricing');">Pricing</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#"
-							onclick="loadIndexPageTemplate('/help/home');">Help</a>
+						<a class="nav-link" href="#" onclick="loadIndexPageTemplate('/help/home');">Help</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#"
-							onclick="loadIndexPageTemplate('about');">About</a>
+						<a class="nav-link" href="#" onclick="loadIndexPageTemplate('about');">About</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#"
-							onclick="loadIndexPageTemplate('contact');">Contact</a>
+						<a class="nav-link" href="#" onclick="loadIndexPageTemplate('contact');">Contact</a>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 
-	<!-- <footer id="footer" class="bg-dark text-light py-5">
+	<div class="container">
+		<div class="page-container row">
+		</div>
+	</div>
+
+	<!-- <div id="footer" class="bg-dark">
+		<div class="text-warning">This is the footer</div>
+	</div> -->
+
+	<!-- <div class="bg-dark text-light py-5">
 		<div class="container py-5">
 			<div class="row">
 				<div class="col-6 col-md-6 col-lg-3 mb-2">
@@ -76,7 +72,8 @@
 						<li><a class="text-white" target="ext" rel="nofollow" href="http://codeply.com"
 								title="Prototype and edit code for Bootstrap and other responsive frameworks">Codeply</a>
 						</li>
-						<li><a class="text-white" target="ext" rel="nofollow" href="http://bootply.com">Bootply</a></li>
+						<li><a class="text-white" target="ext" rel="nofollow" href="http://bootply.com">Bootply</a>
+						</li>
 					</ul>
 				</div>
 				<div class="col-6 col-md-6 col-lg-3 mb-2">
@@ -105,15 +102,34 @@
 					</ul>
 				</div>
 			</div>
-			<!--/row--
 		</div>
-	</footer> -->
+	</div> -->
 
 	<script src="/vendor/jquery/jquery.min.js"></script>
 	<script src="/vendor/bootstrap/js/popper.min.js"></script>
 	<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="/js/scripts.js"></script>
+	<!-- <script src="/js/scripts.js"></script> -->
 	<script>
+		function loadTemplate(templateName, domSelector) {
+			templateName = templateName.indexOf('/template/') == 0 ? templateName : '/template/' + templateName;
+			templateName += templateName.indexOf('.html') > 0 ? '' : '.html';
+			console.log('templateName: ', templateName);
+			$.ajax({
+				url: templateName,
+				context: $(domSelector)
+			}).done(function (data) {
+				$(this).empty().append(data);
+			});
+		}
+
+		function loadSubPageTemplate(templateName) {
+			loadTemplate(templateName, 'div.page-content');
+		}
+
+		function loadIndexPageTemplate(templateName) {
+			loadTemplate(templateName, 'div.page-container');
+		} 
+		
 		$(document).ready(() => {
 			loadTemplate('/template/home.html', 'div.page-container');
 		});

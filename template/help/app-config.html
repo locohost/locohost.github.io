@@ -3,10 +3,17 @@
 	<div>
 		<p>NoSQL:IDE is fully driven by JSON doc files. The main JSON doc is <strong>app.config.json</strong>. This JSON
 			doc stores all the necessary information for configuring, loading, running and connecting to your databases.
-			Following is an example of a valid app.config.json that can connect to 2 different Firestore databases.
-			Following the screen cap are details of each field.
+			To edit your app.config.json, click the config settings <span class="bold underline">Gears</span> icon in
+			top/left of app UI.
 		</p>
-		<img src="/assets/img/screen-cap-app-config.png">
+		<p>
+			Following is an example of a valid app.config.json that can connect to 2 different Firestore databases. You
+			can connect to any number of different databases.
+		</p>
+		<p>
+			Details for each attrib are below the screenshot.
+		</p>
+		<img src="/assets/img/screen-cap-app-config.png" height="1053" >
 	</div>
 
 	<div>
@@ -58,8 +65,13 @@
 					</p>
 					<p>
 						<h5>db.<span class="db-name">yourdatabasename</span>.softDeleteAttrib</h5>
-						This sets the name of the collection attribute used to mark your documents as <i>soft deleted</i>.
-						Set	this to null if you do not want to use soft deleted documents. NoSQL:IDE queries <i>automatically honor</i> this soft delete attrib. You <i>do need</i> to have/set this attrib to false when creating new docs, however there is no need to enter it in any queries. Soft deleting is better than hard deletes for soooo many reasons. NOTE: A new cleanup feature to purge (hard delete) ranges of soft deleted documents is in development.
+						This sets the name of the collection attribute used to mark your documents as <i>soft
+							deleted</i>.
+						Set this to null if you do not want to use soft deleted documents. NoSQL:IDE queries
+						<i>automatically honor</i> this soft delete attrib. You <i>do need</i> to have/set this attrib
+						to false when creating new docs, however there is no need to enter it in any queries. Soft
+						deleting is better than hard deletes for soooo many reasons. NOTE: A new cleanup feature to
+						purge (hard delete) ranges of soft deleted documents is in development.
 					</p>
 					<p>
 						<h5>db.<span class="db-name">yourdatabasename</span>.config</h5>
