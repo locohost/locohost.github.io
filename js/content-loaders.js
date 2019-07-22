@@ -1,5 +1,5 @@
 function loadTemplate(templateName, domSelector) {
-	templateName = templateName.indexOf('/template/') == 0 ? templateName : '/template/' + templateName;
+	templateName = templateName.indexOf('/page/partial/') == 0 ? templateName : '/page/partial/' + templateName;
 	templateName += templateName.indexOf('.html') > 0 ? '' : '.html';
 	console.log('templateName: ', templateName);
 	$.ajax({
